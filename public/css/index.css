@@ -1,1 +1,218 @@
-:root{--lightgray:#EEE;--blue:#1C6DD0;--dark:#24292f;--light:#FFF;--transparent:rgba(255,255,255,.95)}*{-webkit-box-sizing:border-box;box-sizing:border-box}body,html{padding:0;margin:0;font-family:-apple-system,system-ui,sans-serif;color:var(--dark);background-color:var(--light);font-size:1.125rem;line-height:1.75}p{margin:1rem 0 0}p:last-child{margin-bottom:0}img{max-width:100%;height:auto;margin:1.5rem 0}h1,h2,h3,h4{font-weight:600}h4{font-size:1.125em}h3{font-size:1.25em}h2{font-size:1.65em}h1{font-size:1.75em}a[href]{color:var(--blue);text-decoration:none}a[href]:visited{color:var(--blue)}a[href]:hover{text-decoration:underline}main{width:min(90ch,100vw - 1rem);margin:5rem auto 3rem;padding:1rem}main :first-child{margin-top:0}header{position:fixed;border-bottom:.063rem solid var(--lightgray);z-index:5;width:100%;background:var(--transparent);top:0;padding:1.125rem 0}header:after{content:"";display:table;clear:both}table,td,th{border:.063rem solid var(--lightgray)}table{width:100%;border-collapse:collapse}td,th{padding:.25rem .5rem;text-align:left}tbody tr:nth-child(odd) td,tbody tr:nth-child(odd) th{background-color:var(--lightgray)}pre{font-size:1.063rem;line-height:1.375;direction:ltr;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;-moz-tab-size:2;-o-tab-size:2;tab-size:2;-webkit-hyphens:none;-ms-hyphens:none;hyphens:none;padding:1em;margin:.5em 0;padding:1.5em;margin:.5em 0;overflow:auto}code{word-break:break-all}blockquote{margin-right:0;text-rendering:optimizeLegibility;-moz-osx-fon-smoothing:grayscale}blockquote p:first-of-type:before{content:'\201c';padding-right:.25em}blockquote p:last-of-type:after{content:'\201d';padding-left:.25em}.top-side{max-width:min(90ch,100vw - 1rem);width:auto;margin:0 auto}.home{float:left;margin:0 0 0 1rem;font-size:1.175em}.home-lite{display:none}nav{color:var(--darkgray);float:right;margin-top:1%}nav ul{margin:0 1rem 0 0}nav li{display:inline-block}nav li:first-child:before{content:'';padding:0 .5em 0 0}nav li:before{content:'.';padding:0 .5em}.tittle{text-align:center;padding:3rem 0 4rem}.postlist{list-style:none;padding:0;display:-webkit-box;display:-ms-flexbox;display:flex;gap:2rem;-ms-flex-wrap:wrap;flex-wrap:wrap}.postlist-item{line-height:1.8;padding:1rem;border:.063rem solid var(--lightgray);border-radius:.25rem;-webkit-box-flex:1;-ms-flex:1 1 25ch;flex:1 1 25ch}.left-side{-ms-flex-preferred-size:55ch;flex-basis:55ch}.right-side{-ms-flex-preferred-size:20ch;flex-basis:20ch;height:-webkit-fit-content;height:-moz-fit-content;height:fit-content;position:sticky;top:8rem}.right-side ul{list-style:none;padding:0}.postlist-date{display:block}.postlist-link{text-underline-position:from-font;text-underline-offset:0;text-decoration-thickness:1px;display:block;font-size:1.175em;font-weight:600}.tmpl-post{width:min(90ch,100vw - 1rem)}.post-tag{color:var(--darkgray);display:inline;padding:0 .8rem;text-transform:uppercase;font-size:95%;text-align:left}.post-tag:before{content:"#"}.postlist-item>.post-tag{-ms-flex-item-align:center;-ms-grid-row-align:center;align-self:center}.archive{-webkit-padding-start:1rem;padding-inline-start:1rem}footer{border-top:.063rem solid var(--lightgray);margin:0 auto;color:var(--darkgray);text-align:center}footer ul{list-style:none;margin:1.125rem auto}footer li{display:inline}footer li:first-child:before{content:'©';padding:0 .5em 0 0}footer li:before{content:'.';padding:0 .5em}@media only screen and (max-width:37em){header{padding:.75rem 0}.home{display:none}.home-lite{display:block;float:left;margin:0 0 0 1rem;font-size:1.175em}nav li:first-child:before{padding:0}footer{text-align:left}footer li{display:block}footer li:before{content:'';padding:0}}
+/* Defaults */
+:root {
+	--font-family: -apple-system, system-ui, sans-serif;
+	--font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
+}
+
+/* Theme colors */
+:root {
+	--color-gray-20: #e0e0e0;
+	--color-gray-50: #C0C0C0;
+	--color-gray-90: #333;
+
+	--background-color: #fff;
+
+	--text-color: var(--color-gray-90);
+	--text-color-link: #082840;
+	--text-color-link-active: #5f2b48;
+	--text-color-link-visited: #17050F;
+
+	--syntax-tab-size: 2;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--color-gray-20: #e0e0e0;
+		--color-gray-50: #C0C0C0;
+		--color-gray-90: #dad8d8;
+
+		/* --text-color is assigned to --color-gray-_ above */
+		--text-color-link: #1493fb;
+		--text-color-link-active: #6969f7;
+		--text-color-link-visited: #a6a6f8;
+
+		--background-color: #15202b;
+	}
+}
+
+
+/* Global stylesheet */
+* {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	padding: 0;
+	margin: 0 auto;
+	font-family: var(--font-family);
+	color: var(--text-color);
+	background-color: var(--background-color);
+}
+html {
+	overflow-y: scroll;
+}
+body {
+	max-width: 40em;
+}
+
+/* https://www.a11yproject.com/posts/how-to-hide-content/ */
+.visually-hidden {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+p:last-child {
+	margin-bottom: 0;
+}
+p {
+	line-height: 1.5;
+}
+
+li {
+	line-height: 1.5;
+}
+
+a[href] {
+	color: var(--text-color-link);
+}
+a[href]:visited {
+	color: var(--text-color-link-visited);
+}
+a[href]:hover,
+a[href]:active {
+	color: var(--text-color-link-active);
+}
+
+main {
+	padding: 1rem;
+}
+main :first-child {
+	margin-top: 0;
+}
+
+header {
+	border-bottom: 1px dashed var(--color-gray-20);
+}
+header:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.links-nextprev {
+	list-style: none;
+	border-top: 1px dashed var(--color-gray-20);
+	padding: 1em 0;
+}
+
+table {
+	margin: 1em 0;
+}
+table td,
+table th {
+	padding-right: 1em;
+}
+
+pre,
+code {
+	font-family: var(--font-family-monospace);
+}
+pre:not([class*="language-"]) {
+	margin: .5em 0;
+	line-height: 1.375; /* 22px /16 */
+	-moz-tab-size: var(--syntax-tab-size);
+	-o-tab-size: var(--syntax-tab-size);
+	tab-size: var(--syntax-tab-size);
+	-webkit-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+	direction: ltr;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+}
+code {
+	word-break: break-all;
+}
+
+/* Header */
+header {
+	display: flex;
+	gap: 1em .5em;
+	flex-wrap: wrap;
+	align-items: center;
+	padding: 1em;
+}
+.home-link {
+	font-size: 1em; /* 16px /16 */
+	font-weight: 700;
+	margin-right: 2em;
+}
+.home-link:link:not(:hover) {
+	text-decoration: none;
+}
+
+/* Nav */
+.nav {
+	display: flex;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.nav-item {
+	display: inline-block;
+	margin-right: 1em;
+}
+.nav-item a[href]:not(:hover) {
+	text-decoration: none;
+}
+.nav a[href][aria-current="page"] {
+	text-decoration: underline;
+}
+
+/* Posts list */
+.postlist {
+	list-style: none;
+	padding: 0;
+	padding-left: 1.5rem;
+}
+.postlist-item {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	counter-increment: start-from -1;
+	margin-bottom: 1em;
+}
+.postlist-item:before {
+	display: inline-block;
+	pointer-events: none;
+	content: "" counter(start-from, decimal-leading-zero) ". ";
+	line-height: 100%;
+	text-align: right;
+	margin-left: -1.5rem;
+}
+.postlist-date,
+.postlist-item:before {
+	font-size: 0.8125em; /* 13px /16 */
+	color: var(--color-gray-90);
+}
+.postlist-date {
+	word-spacing: -0.5px;
+}
+.postlist-link {
+	font-size: 1.1875em; /* 19px /16 */
+	font-weight: 700;
+	flex-basis: calc(100% - 1.5rem);
+	padding-left: .25em;
+	padding-right: .5em;
+	text-underline-position: from-font;
+	text-underline-offset: 0;
+	text-decoration-thickness: 1px;
+}
